@@ -1,13 +1,235 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  background: #faf7f7;
+  color: #222;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.wrapper{
+  width: 1280px;
+  margin: 50px auto;
+}
+
+header{
+  position: relative;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: 50px;
+}
+
+header ul.nav{
+  float: right;
+  list-style: none;
+}
+
+header ul.nav li{
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+header ul.nav li:hover{
+  opacity: .5;
+}
+
+header .presentation{
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  background: url(./img/main.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 1250px;
+  height: 500px;
+  position: relative;
+}
+
+header .presentation::after{
+  content: 'Лучшие товары для вашего дома';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 300px;
+  text-align: start;
+}
+
+header .presentation::before{
+  content: 'по низким ценам';
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 300px;
+  text-align: start;
+}
+
+
+header .shop-card{
+  float: right;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+
+header .shop-card:hover,
+header .shop-card.active{
+  color: #c03b3b;
+  transform: scale(1.3);
+}
+
+header .shop{
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  background: #eee6e6;
+  z-index: 1000;
+  padding: 20px;
+  padding-bottom: 0;
+  border-radius: 5px;
+}
+
+header .shop .empty h2{
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+header .shop .item{
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+header .shop .item img{
+  width: 70px;
+  height: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+header .shop .item h2{
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+header .shop .item b {
+  color: #463f3f;
+  font-weight: 600;
+}
+
+header .shop .item .delete-icon{
+  color: #c54242;
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+}
+
+header .shop .summa {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.categories div{
+  display: inline-block;
+  background: #ece6e6;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all .5s ease;
+}
+
+.categories div:hover{
+  border-color: silver;
+  transform: scale(1.1);
+}
+
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item{
+  width: 30%;
+  margin-bottom: 50px;
+  background: #ece6e6;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+main .item img{
+  width: 100%;
+  cursor: pointer;
+}
+
+main .add-to-card,
+.full-item .add-to-card{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #c25b5b;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all .5s ease;
+}
+
+main .add-to-card:hover,
+.full-item .add-to-card:hover{
+  transform: scale(1.5) translateY(-5px);
+}
+
+.full-item{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .8);
+  z-index: 9999;
+  overflow: auto;
+}
+
+.full-item>div {
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #ece6e6;
+  border-radius: 9px;
+}
+
+footer{
+  font-size: .8rem;
+  text-align: center;
 }
